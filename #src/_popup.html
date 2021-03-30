@@ -1,0 +1,52 @@
+<div class="popup popup_callback">
+	<div class="popup__content">
+		<div class="popup__body">
+			<div class="popup__close"></div>
+
+			<div class="popup__title">Заявка на консультацию</div>
+			<form action="#" class="form">
+				<div class="form__row">
+					<div class="form__column">
+						<div class="form__line">
+							<label for="inp" class="form__label">E-mail <span>*</span></label>
+							<input id="inp" autocomplete="off" type="email" name="form[]" data-error="Поле обязательно для заполнения" data-value="" class="input _req">
+						</div>
+						<div class="form__line">
+							<label for="inp" class="form__label">Контактный телефон <span>*</span></label>
+							<input id="inp" autocomplete="off" type="tel" name="form[]" data-error="Поле обязательно для заполнения" data-value="" class="input _req _phone">
+						</div>
+						<div class="form__line">
+							<label for="inp" class="form__label">ФИО <span>*</span></label>
+							<input id="inp" autocomplete="off" type="text" name="form[]" data-error="Поле обязательно для заполнения" data-value="" class="input _req">
+						</div>
+						<div class="form__line">
+							<label class="form__label">Интересующая услуга</label>
+							<select name="form[]" class="form">
+								<option value="1" selected="selected" >Дизайн</option>
+								<option value="2">Проектирование</option>
+								<option value="3">Строительство</option>
+								<option value="4">Другое</option>
+							</select>
+						</div>
+					</div>
+					<div class="form__column">
+						<div class="form__line">
+							<label class="form__label">Сообщение</label>
+							<textarea autocomplete="off" name="form[]" data-value="Кратко опишите суть вашего вопроса" data-error="Ошибка" class="input"></textarea>
+						</div>
+						<div class="form__line">
+							<label class="checkbox">
+								<input data-error="" class="checkbox__input _req" type="checkbox" value="1" name="form[]">
+								<span class="checkbox__text"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a href="">Условиями</a></span></span>
+							</label>
+						</div>
+						<div class="form__button">
+							<button type="submit" class="form__btn btn btn__smaller btn_yellow-2">Оставить заявку</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
