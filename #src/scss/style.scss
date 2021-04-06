@@ -30,7 +30,7 @@ $md2: 991.98;
 $md3: 767.98;
 $md4: 479.98;
 
-$yellow: #E8BD56;
+$c_1: #E8BD56;
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
@@ -60,14 +60,9 @@ body {
 //<ОСНОВНАЯ СЕТКА>===========================================================================================================
 ._container {
 	max-width: $maxWidthContainer + px;
-	// max-width: none;
-		// padding: 0 145px;
 	margin: 0 auto;
 	@media (max-width: $md1+px) {
 		max-width: 970px;
-
-		// max-width: none;
-		// padding: 0 145px;
 	}
 	@media (max-width: $md2+px) {
 		max-width: 750px;
@@ -86,7 +81,7 @@ body {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 //@import "datepicker";
-//@import "lightgallery";
+@import "lightgallery";
 //@import "pagging";
 @import "popup";
 @import "header";
@@ -100,11 +95,7 @@ body {
 }
 //===================================================================================================================================
 .main-screen {
-	background-color: rgb(59, 59, 158);
-
 	min-height: 100vh;
-
-	
 
 	&__container {
 		position: relative;
@@ -112,23 +103,23 @@ body {
 
 		min-height: 100vh; // для кнопок слика - чтобы расположить их аболютно в левом нижнем углу фулскрина
 
-		@media (max-width:$md3+px){
+		// @media (max-width:$md3+px){
 			display: flex;
 			align-items: center;
-		}
+		// }
 	}
 
 	&__content{
-		padding: 245px 0px 0px 0px;
-		@media (max-width:$md3+px){
-			padding: 0;
-		}
+		// padding: 245px 0px 0px 0px;
+		// @media (max-width:$md3+px){
+		// 	padding: 0;
+		// }
+		flex: 1 1 100%; // один фл-эл-т на всю ширину фл-контейнера
 	}
 
 	&__row{
 		display: flex;
 		justify-content: space-between;
-
 	}
 
 	&__column {
@@ -154,18 +145,28 @@ body {
 			font-size: 60px;
 		}
 		@media (max-width:$md3+px){
-			font-size: 30px;
+			font-size: 40px;
 			line-height: 50px;
+			text-shadow: 0px 0 10px #000;
 		}
 	}
 
 	&__btn {
-		font-size: 20px;
-		line-height: 70px; // 75 was a bit off
+		line-height: 70px; // .btn's 75 was a bit off
 		padding: 0px 66px;
+		@media (max-width:$md3+px){
+			background-color: rgba(0, 0, 0, 0.472);
+		}
 	}
 
 	&__social {
+		a{
+			display: block;
+			margin: 0px 0px 50px 0px;
+			&:last-child{
+				margin: 0;
+			}
+		}
 		@media (max-width:$md3+px){
 			display: none;
 		}
@@ -220,8 +221,12 @@ body {
 		transition: all 0.3s ease 0s;
 		&:hover{
 			// box-shadow: 0 0 7px rgba(255, 255, 255, 0.87);
-			color: $yellow;
+			// color: $c_1;
+			color:#000;
 			background-color: rgba(255, 255, 255, 0.883);
+			// text-shadow: 1px 1px 1px #000;
+			// text-shadow: 0px 0px 1px #000;
+			
 		}
 		@media (max-width: 1500px){
 			height: 70px;
@@ -232,7 +237,7 @@ body {
 			line-height: 40px;
 			padding: 0px 10px;
 			background-color: transparent;
-			color: $yellow;
+			color: $c_1;
 			text-shadow: 0 0 5px #000;
 		}
 	}
@@ -241,11 +246,7 @@ body {
 .social {
 
 	&__item {
-		display: block;
-		margin: 0px 0px 50px 0px;
-		&:last-child{
-			margin: 0;
-		}
+
 	}
 }
 .slider {
@@ -264,7 +265,204 @@ body {
 	}
 }
 //========================================================================================================================================================
+.stats {
+	padding: 125px 0px 75px 0px;
+	@media (max-width:$md3+px){
+		padding: 70px 0px 20px 0px;
+	}
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:$md2+px){
+			flex-direction: column;
+			align-items: center;
+		}
+	}
 
-	// max-width: 1535px; - надо будет сделать (вместо использования контейнера )для всех блоков кот выравн по краю 
+	&__column {
+		flex: 0 1 33.333%;
+		@media (max-width:$md2+px){
+			flex: 1 1 100%;
+			margin: 0px 0px 30px 0px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: flex-end;
+	}
+
+	&__number {
+		color: $c_1;
+		font-family:'GothamPro';
+		font-size: 119px;
+		letter-spacing: -0.06em;
+		margin: 0px 24px 0px 0px;
+		@media (max-width: 1200px){
+			font-size: 80px;
+			margin: 0px 15px 0px 0px;
+		}
+		@media (max-width:$md3+px){
+			font-size: 50px;
+		}
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 111.18%; // of fz
+		padding: 0px 0px 22px 0px; // making up for Gotham's size peculiarities
+		
+		// a way to make text wrap after each word (no matter how long):
+		width: 100px; // можно хоть 0 - главное чтобы не больше чем word-spacing
+		word-spacing: 100px;
+
+		@media (max-width:$md3+px){
+			font-size: 16px;
+			padding: 0px 0px 10px 0px;
+		}
+	}
+}
+
+//========================================================================================================================================================
+.design {
+
+	&__gallery {
+	}
+}
+//========================================================================================================================================================
+.construction {
+
+	&__gallery {
+	}
+}
+//========================================================================================================================================================
+.about {
+	padding: 110px 0px 80px 0px;
+	@media (max-width:$md3+px){
+		padding: 60px 0px 80px 0px;
+		background-color: rgb(235, 234, 234);
+	}
+
+	&__container{
+		display: flex;
+		@media (max-width:$md3+px){
+			flex-wrap: wrap;
+		}
+	}
+
+	&__title {
+		flex: 0 1 50%;
+		padding: 0px 30px 0px 0px;
+		@media (max-width:$md1+px){
+			flex: 0 1 40%;
+		}
+		@media (max-width:$md3+px){
+			flex: 1 1 100%;
+			text-align: center;
+			padding: 0;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__body {
+		flex: 0 1 50%;
+		display: flex;
+		margin: 0px -30px;
+		@media (max-width:$md1+px){
+			flex: 0 1 60%;
+		}
+		@media (max-width:$md3+px){
+			flex: 1 1 100%;
+
+			flex-wrap: wrap;
+		}
+	}
+
+	&__column {
+		flex: 0 1 50%;
+		padding: 0px 30px;
+		@media (max-width:$md3+px){
+			flex: 1 1 100%;
+			margin: 0px 0px 20px 0px;
+			&:last-child{
+				margin: 0;
+			}
+		}
+	}
+}
+//========================================================================================================================================================
+.free {
+	padding: 80px 0px 150px 0px;
+	@media (max-width:$md3+px){
+		padding: 80px 0px 80px 0px;
+	}
+	&__container {
+		display: flex;
+		@media (max-width:$md3+px){
+			flex-direction: column;
+		}
+	}
+
+	&__image {
+		flex: 0 1 50%;
+		height: 440px;
+		border-radius: 5px;
+		overflow: hidden;
+		position: relative;
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width:$md1+px){
+			height: 350px;
+		}
+		@media (max-width:$md3+px){
+			flex: 0 0 200px;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__body {
+		flex: 0 1 50%;
+		padding: 0px 90px 0px 125px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@media (max-width:$md2+px){
+			padding: 0px 30px 0px 50px;
+		}
+		@media (max-width:$md3+px){
+			padding: 0;
+		}
+	}
+
+	&__title {
+		margin: 0px 0px 20px 0px;
+		@media (max-width:$md3+px){
+			text-align: center;
+		}
+	}
+
+	&__text {
+		margin: 0px 0px 60px 0px;
+		@media (max-width:$md3+px){
+			margin: 0px 0px 30px 0px;
+		}
+	}
+
+	&__button {
+		align-self: flex-start; // ограничить ширину
+		@media (max-width:$md3+px){
+			align-self: center;
+		}
+	}
+}
+//========================================================================================================================================================
+
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================

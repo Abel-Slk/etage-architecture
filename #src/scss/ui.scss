@@ -1,5 +1,157 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+.gallery {
+	padding: 50px 0px;
 
+	display: flex;
+	margin: 0px -7.5px;
+	
+	@media (max-width:$md3+px){
+		padding: 20px 0px;
+		flex-wrap: wrap;
+	}
+	&_reverse{
+		flex-direction: row-reverse;
+	}
+	&_mob-reverse{
+		@media (max-width:$md3+px){
+			display: flex;
+			flex-direction: column-reverse; // gotta use column-reverse, not row-reverse: even though I didn't use flex-direction: column above, it seems that the way flex works is dependent on whether it's ACTUALLY layed out as a row or col - and here on md3 due to wrapping elements are layed out in a col
+		}
+	}
+
+	&__column {
+		padding: 0px 7.5px;
+
+		&_medium {
+			flex: 0 1 30%;
+		}
+		&_narrow {
+			flex: 0 1 20%;
+			@media (max-width:$md3+px){
+				display: none;
+			}
+		}
+		&_wide {
+			flex: 0 1 40%;
+			@media (max-width:$md3+px){
+				display: none;
+			}
+		}
+
+		@media (max-width:$md3+px){
+			flex: 1 1 100%;
+			margin: 0px 0px 40px 0px;
+		}
+	}
+
+	&__description {
+		position: relative;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		
+	}
+
+	&__link{
+		&:hover{
+			&::after{
+				content:'';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(255, 255, 255, 0.185);
+			}
+		}
+	}
+
+	&__image{
+		height: 446px;
+		position: relative;
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width:$md2+px){
+			height: 300px;
+		}
+	}
+}
+.block {
+	display: inline-flex; // чтобы не располз на всю ширину и не мешал центрировать &__description
+	flex-direction: column;
+	// align-items: flex-start; // чтобы кнопка не располз на всю ширину
+
+	&__title {
+		// align-self: flex-start; // need a limiting container to use that here
+		font-family:'GothamPro';
+		font-size: 28px;
+		line-height: 27px;
+		margin: 0px 0px 35px 0px;
+		@media (max-width:$md3+px){
+			text-align: center;
+		}
+	}
+
+	&__list {
+		font-size: 16px;
+		line-height: 155.18%; // of fz
+		margin: 0px 0px 40px 0px;
+	}
+
+	&__item {
+		margin: 0px 0px 15px 0px;
+		&:last-child{
+			margin: 0;
+		}
+		padding: 0px 0px 0px 9px;
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translate(0px,-50%);
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			overflow: hidden;
+			background-color: rgba(0, 0, 0, 0.171);
+		}
+		@media (max-width:$md3+px){
+			padding: 0px 0px 0px 20px;
+		}
+	}
+
+	&__button {
+		font-size: 16px; // works over btn classes?
+		justify-content: center; // выровнять текст
+		align-self: center; // ограничить ширину
+		padding: 0px 66px; // добавить ширины
+	}
+}
+//========================================================================================================================================================
+.section-heading {
+	font-family:'GothamPro';
+	font-size: 48px;
+	line-height: 155.18%;
+	@media (max-width:$md1+px){
+		font-size: 38px;
+	}
+	@media (max-width:$md2+px){
+		font-size: 28px;
+	}
+}
+.section-text {
+	font-size: 18px;
+	line-height: 150%;
+	opacity: 0.8;
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================

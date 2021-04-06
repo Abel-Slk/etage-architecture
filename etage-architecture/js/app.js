@@ -56,14 +56,14 @@ let unlock = true;
 
 //=================
 //ActionsOnHash
-if (location.hash) {
-	const hsh = location.hash.replace('#', '');
-	if (document.querySelector('.popup_' + hsh)) {
-		popup_open(hsh);
-	} else if (document.querySelector('div.' + hsh)) {
-		_goto(document.querySelector('.' + hsh), 500, '');
-	}
-}
+// if (location.hash) {
+// 	const hsh = location.hash.replace('#', '');
+// 	if (document.querySelector('.popup_' + hsh)) {
+// 		popup_open(hsh);
+// 	} else if (document.querySelector('div.' + hsh)) {
+// 		_goto(document.querySelector('.' + hsh), 500, '');
+// 	}
+// }
 //=================
 //Menu
 let iconMenu = document.querySelector(".icon-menu");
@@ -83,6 +83,19 @@ function menu_close() {
 	let menuBody = document.querySelector(".menu__body");
 	iconMenu.classList.remove("_active");
 	menuBody.classList.remove("_active");
+}
+
+
+let clickableItems = document.querySelectorAll(".menu__link, .menu__list"); // menu__list чтобы меню закрывалось после нажатия на свободном месте в мобильном меню
+if (clickableItems) {
+	for (let index = 0; index < clickableItems.length; index++) {
+		const el = clickableItems[index];
+		el.addEventListener("click", function (e) {
+			menu_close();
+			let body = document.querySelector("body");
+			body.classList.remove("_lock");
+		});
+	}
 }
 //=================
 //BodyLock
@@ -249,7 +262,7 @@ function gallery_init() {
 		const el = gallery[index];
 		lightGallery(el, {
 			counter: false,
-			selector: 'a',
+			selector: 'a.gallery__link', // instead of just 'a' - had to add the gallery__link class to image links so that lightGallery wouldn't also grab the button a link
 			download: false
 		});
 	}
@@ -664,6 +677,8 @@ adaptive_function();
 $(window).resize(function(event) {
 	adaptive_function();
 });
+
+
 
 if($('.slider').length>0){
 	$('.slider').slick({
