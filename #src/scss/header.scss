@@ -11,9 +11,7 @@
 		height: 140px;
 		@media (max-width:$md3+px){
 			height: 50px;
-		// background-color: $c_1;
-		background-color: #000;
-
+			background-color: #000;
 		}
 		display: flex;
 		justify-content: space-between;

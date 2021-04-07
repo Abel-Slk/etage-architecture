@@ -85,10 +85,8 @@
 .block {
 	display: inline-flex; // чтобы не располз на всю ширину и не мешал центрировать &__description
 	flex-direction: column;
-	// align-items: flex-start; // чтобы кнопка не располз на всю ширину
 
 	&__title {
-		// align-self: flex-start; // need a limiting container to use that here
 		font-family:'GothamPro';
 		font-size: 28px;
 		line-height: 27px;
@@ -100,7 +98,7 @@
 
 	&__list {
 		font-size: 16px;
-		line-height: 155.18%; // of fz
+		line-height: 155.18%;
 		margin: 0px 0px 40px 0px;
 	}
 
@@ -155,77 +153,7 @@
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================
-.row:after {
-	display: block;
-	content: "";
-	clear: both;
-}
-.rub:after {
-	content: "₽";
-}
-//====================================================================================================
-%noselect {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-//====================================================================================================
-ol.counter {
-	list-style-type: none;
-	counter-reset: item;
-	li {
-		position: relative;
-		padding: 0px 0px 0px 45px;
-		&:before {
-			counter-increment: item;
-			content: counter(item);
-			position: absolute;
-			left: 0;
-			top: 0;
-			color: #818181;
-			font-size: 14px;
-			font-weight: 700;
-			text-align: center;
-			line-height: 26px;
-			border-radius: 50%;
-			width: 28px;
-			height: 28px;
-			border: 1px solid #4274bb;
-		}
-	}
-}
-//====================================================================================================
-.ellipsis {
-	display: block;
-	overflow: hidden;
-	width: 100%;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-.es {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-//====================================================================================================
-.table {
-	display: table;
-	font-size: 0;
-	width: 100%;
-	//table-layout: fixed;
-}
-.trow {
-	display: table-row;
-}
-.cell {
-	display: table-cell;
-	&.full {
-		width: 100%;
-	}
-}
+
 //====================================================================================================
 ._ibg {
 	position: relative;
@@ -251,94 +179,7 @@ body.ie {
 		visibility: hidden;
 	}
 }
-//====================================================================================================
-._video {
-	position: relative;
-	overflow: hidden;
-	height: 0;
-	padding-bottom: 56.25%;
-	video,
-	iframe,
-	object,
-	embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-.videobg {
-	video,
-	iframe,
-	object,
-	embed {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		z-index: -100;
-		transform: translateX(-50%) translateY(-50%);
-		background-size: cover;
-	}
-}
-//====================================================================================================
-// ._more-block
-._more-block {
-}
-// ._more-content
-._more-content {
-	transition: all 0.3s ease 0s;
-	overflow: hidden;
-}
-// ._more-item
-._more-item {
-}
-// ._more-link
-._more-link {
-	cursor: pointer;
-	span {
-		font-style: normal;
-		&:first-child {
-			display: block;
-		}
-		&:last-child {
-			display: none;
-		}
-	}
-	&._active {
-		span {
-			font-style: normal;
-			&:first-child {
-				display: none;
-			}
-			&:last-child {
-				display: block;
-			}
-		}
-	}
-}
-//====================================================================================================
-%graystyle {
-	transition: all 0.3s ease 0s;
-	filter: grayscale(1);
-	-webkit-filter: grayscale(1);
-	-moz-filter: grayscale(1);
-	-o-filter: grayscale(1);
-}
-%graystyleoff {
-	filter: grayscale(0);
-	-webkit-filter: grayscale(0);
-	-moz-filter: grayscale(0);
-	-o-filter: grayscale(0);
-}
-//====================================================================================================
-#map {
-	background: url("../img/icons/loading.gif") center / 50px no-repeat;
-}
+
 //====================================================================================================
 .slider.slick-slider {
 	// position: relative;
@@ -373,46 +214,6 @@ body.ie {
 		position: relative;
 	}
 	.slick-arrow {
-		// width: 75px;
-		// height: 75px;
-
-		// position: absolute;
-		// left: 0;
-		// bottom: 70px;
-		// position: relative;
-		// left: 0;
-		// bottom: 0;
-
-		// margin: -25px 0px 0px 0px;
-
-		// z-index: 10;
-		// font-size: 0;
-
-		// border: 1px solid #fff;
-		// &.slick-prev {
-		// 	// left: 145px;
-		// 	background: url("../img/main-screen/arrow-left.svg") 50% / 26px 22px no-repeat;
-		// 	@media (max-width: 1500px){
-		// 		// left: 0;
-		// 		// left: 50%;
-		// // margin: -25px 0px 0px 0px;
-
-		// 	}
-		// }
-		// &.slick-next {
-		// 	// left: 267px; // 145+122
-		// 	background: url("../img/main-screen/arrow-right.svg") 50% / 26px 22px no-repeat;
-		// 	@media (max-width: 1500px){
-		// 		// left: 122px;
-		// 		// left: 50%;
-
-		// 	}
-		// }
-		
-		// @media (max-width: 850px) {
-		// 	width: 0px;
-		// 	height: 0px;
-		// }
 	}
 
 	.slick-dots {
@@ -430,13 +231,9 @@ body.ie {
 	@media (max-width: 1500px){
 		bottom: 100px;
 	}
-	// @media (max-width: 850px) {
-	// 	display: none;
-	// }
 	@media (max-width:$md3+px){
 		bottom: 30px;
 		display: flex;
-		// flex-direction: column;
 	}
 
 	.prev {
@@ -485,44 +282,6 @@ body.ie {
 		}
 	}
 }
-//=====================================================================================================================
-._tabs {
-}
-._tabs-item {
-}
-._tabs-block {
-	display: none;
-	&._active {
-		display: block;
-	}
-}
-//=====================================================================================================================
-.mirror {
-	transform: scale(-1, 1);
-}
-//=====================================================================================================================
-.nicescroll-rails {
-	z-index: 1000 !important;
-}
-//=====================================================================================================================
 
-//========================================================================================================================================================
-._custom-scroll {
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 3px;
-	height: 100%;
-	z-index: 1000;
-	//background-color: rgba(0, 0, 0, 0.1);
-	&__line {
-		background-color: rgba(0, 0, 0, 0.5);
-		border-radius: 3px 0 0 3px;
-		position: relative;
-		left: 0;
-		top: 0;
-		width: 100%;
-	}
-}
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================
 

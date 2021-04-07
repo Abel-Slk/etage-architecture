@@ -47,7 +47,6 @@ body {
 //<ОБОЛОЧКА>===========================================================================================================
 .wrapper {
 	width: 100%;
-	// min-height: 100%;
 	min-height: 100vh;
 	overflow: hidden;
 	display: flex;
@@ -100,17 +99,11 @@ body {
 
 		min-height: 100vh; // для кнопок слика - чтобы расположить их аболютно в левом нижнем углу фулскрина
 
-		// @media (max-width:$md3+px){
-			display: flex;
-			align-items: center;
-		// }
+		display: flex;
+		align-items: center;
 	}
 
 	&__content{
-		// padding: 245px 0px 0px 0px;
-		// @media (max-width:$md3+px){
-		// 	padding: 0;
-		// }
 		flex: 1 1 100%; // один фл-эл-т на всю ширину фл-контейнера
 	}
 
@@ -124,7 +117,6 @@ body {
 			flex: 0 1 770px;
 			@media (max-width:$md3+px){
 				flex: 0 1 300px;
-				// text-align: center;
 			}
 		}
 		&:last-child{
@@ -177,9 +169,6 @@ body {
 		bottom: 0;
 		right: 0;
 		z-index: 20;
-		// @media (max-width:$md3+px){
-		// 	display: none;
-		// }
 	}
 
 	&__list {
@@ -217,13 +206,8 @@ body {
 		border-bottom: 0.5px solid #838383;
 		transition: all 0.3s ease 0s;
 		&:hover{
-			// box-shadow: 0 0 7px rgba(255, 255, 255, 0.87);
-			// color: $c_1;
 			color:#000;
 			background-color: rgba(255, 255, 255, 0.883);
-			// text-shadow: 1px 1px 1px #000;
-			// text-shadow: 0px 0px 1px #000;
-			
 		}
 		@media (max-width: 1500px){
 			height: 70px;
@@ -306,7 +290,7 @@ body {
 
 	&__text {
 		font-size: 18px;
-		line-height: 111.18%; // of fz
+		line-height: 111.18%;
 		padding: 0px 0px 22px 0px; // making up for Gotham's size peculiarities
 		
 		// a way to make text wrap after each word (no matter how long):
