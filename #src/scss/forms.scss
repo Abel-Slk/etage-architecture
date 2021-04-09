@@ -16,9 +16,12 @@
 		}
 		@media (max-width:$md3+px){
 			&:first-child{
-				max-width: 100%; // надо поменять с flex тк теперь fdc
+				// надо поменять тк теперь fdc:
+				flex: 1 1 auto; // чтобы вертикально не огранич 265px
+				max-width: 100%;
 				margin: 0;
 
+				// для широких экр / гориз тел:
 				display: flex;
 				flex-direction: column;
 				width: 300px;
