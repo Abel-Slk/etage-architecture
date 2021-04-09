@@ -100,8 +100,6 @@ body {
 		min-height: 100vh; // для кнопок слика - чтобы расположить их аболютно в левом нижнем углу фулскрина
 
 		display: flex;
-		// align-items: center;
-		
 	}
 
 	&__content{
@@ -151,6 +149,7 @@ body {
 		padding: 0px 66px;
 		@media (max-width:$md3+px){
 			background-color: rgba(0, 0, 0, 0.472);
+			padding: 0px 33px;
 		}
 	}
 
