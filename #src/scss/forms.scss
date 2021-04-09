@@ -124,9 +124,6 @@
 		border: 1px solid $c_1;
 
 		@media (min-width: 992px){
-			// &:hover{
-			// 	color:#fff;
-			// }
 			&::after{
 				background-color: $c_1;
 			}
