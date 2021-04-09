@@ -83,13 +83,21 @@
 	}
 }
 .block {
-	display: inline-flex; // чтобы не располз на всю ширину и не мешал центрировать &__description
+	display: inline-flex; // чтобы не располз на всю ширину и не мешал центрировать gallery__description
 	flex-direction: column;
+	@media (max-width: 1200px){
+		padding: 0px 0px 0px 20px;
+	}
+	@media (max-width:$md3+px){
+		padding: 0;
+		
+	}
 
 	&__title {
 		font-family:'GothamPro';
 		font-size: 28px;
 		line-height: 27px;
+		font-weight: 500;
 		margin: 0px 0px 35px 0px;
 		@media (max-width:$md3+px){
 			text-align: center;
@@ -107,12 +115,12 @@
 		&:last-child{
 			margin: 0;
 		}
-		padding: 0px 0px 0px 9px;
+		// padding: 0px 0px 0px 9px;
 		position: relative;
 		&::before{
 			content:'';
 			position: absolute;
-			left: 0;
+			left: -13px;
 			top: 50%;
 			transform: translate(0px,-50%);
 			width: 4px;
@@ -121,16 +129,15 @@
 			overflow: hidden;
 			background-color: rgba(0, 0, 0, 0.171);
 		}
-		@media (max-width:$md3+px){
-			padding: 0px 0px 0px 20px;
-		}
 	}
 
 	&__button {
-		font-size: 16px; // works over btn classes?
-		justify-content: center; // выровнять текст
-		align-self: center; // ограничить ширину
+		font-size: 16px;
+		align-self: flex-start;
 		padding: 0px 66px; // добавить ширины
+		@media (max-width:$md3+px){
+			align-self: center;
+		}
 	}
 }
 //========================================================================================================================================================
