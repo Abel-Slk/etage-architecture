@@ -60,6 +60,9 @@ body {
 ._container {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
+	@media (max-width: 1500px){
+		padding: 0px 50px;
+	}
 	@media (max-width: $md1+px) {
 		max-width: 970px;
 	}
@@ -68,7 +71,7 @@ body {
 	}
 	@media (max-width: $md3+px) {
 		max-width: none;
-		padding: 0 10px;
+		padding: 0 15px;
 	}
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
@@ -107,7 +110,13 @@ body {
 
 		padding: 200px 0px 0px 0px;
 		@media (max-width:1500px){
-			padding: 145px 0px 0px 0px;
+			padding: 150px 0px 0px 0px;
+		}
+		@media (max-width:$md3+px){
+			text-align: center;
+		}
+		@media (max-width:$md4+px){
+			padding: 115px 0px 0px 0px;
 		}
 	}
 
@@ -120,7 +129,7 @@ body {
 		&:first-child{
 			flex: 0 1 770px;
 			@media (max-width:$md3+px){
-				flex: 0 1 300px;
+				flex: 0 1 400px;
 			}
 		}
 		&:last-child{
@@ -138,9 +147,9 @@ body {
 			font-size: 60px;
 		}
 		@media (max-width:$md3+px){
-			font-size: 40px;
-			line-height: 50px;
-			text-shadow: 0px 0 10px #000;
+			font-size: 36px;
+			line-height: 36px;
+			margin: 0px 0px 26px 0px;
 		}
 	}
 
@@ -148,8 +157,8 @@ body {
 		line-height: 70px; // .btn's 75 was a bit off
 		padding: 0px 66px;
 		@media (max-width:$md3+px){
-			background-color: rgba(0, 0, 0, 0.472);
-			padding: 0px 33px;
+			padding: 0px 45px;
+			font-size: 14px;
 		}
 	}
 
@@ -168,12 +177,17 @@ body {
 
 	&__slider {
 	}
+	&__mobile-slider{
+	}
 
 	&__menu {
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		z-index: 20;
+		@media (max-width:$md3+px){
+			display: none;
+		}
 	}
 
 	&__list {
@@ -183,14 +197,6 @@ body {
 			flex: 0 0 290px;
 			@media (max-width: 1200px){
 				flex: 0 0 200px;
-			}
-		}
-		
-		@media (max-width:$md3+px){
-			flex-direction: column;
-			align-items: flex-end;
-			li{
-				flex: 0 0 40px;
 			}
 		}
 	}
@@ -218,25 +224,35 @@ body {
 			height: 70px;
 			line-height: 70px;
 		}
-		@media (max-width:$md3+px){
-			height: 40px;
-			line-height: 40px;
-			padding: 0px 10px;
-			background-color: transparent;
-			color: $c_1;
-			text-shadow: 0 0 5px #000;
-		}
 	}
 }
 
 .social {
 
 	&__item {
-
 	}
 }
-.slider {
-
+.slider{
+	@media (max-width:$md3+px){
+		display: none;
+	}
+	&__item {
+		min-height: 100vh;
+		position: relative;
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+}
+.slider-mobile {
+	@media (min-width:$md3+px){
+		display: none;
+	}
 	&__item {
 		min-height: 100vh;
 		position: relative;
@@ -262,6 +278,9 @@ body {
 		@media (max-width:$md2+px){
 			flex-direction: column;
 			align-items: center;
+		}
+		@media (max-width:$md4+px){
+			align-items: flex-start;
 		}
 	}
 
@@ -289,7 +308,7 @@ body {
 			margin: 0px 15px 0px 0px;
 		}
 		@media (max-width:$md3+px){
-			font-size: 50px;
+			font-size: 95px;
 		}
 	}
 
@@ -303,8 +322,8 @@ body {
 		word-spacing: 100px;
 
 		@media (max-width:$md3+px){
-			font-size: 16px;
-			padding: 0px 0px 10px 0px;
+			font-size: 18px;
+			padding: 0px 0px 18px 0px;
 		}
 	}
 }
@@ -313,6 +332,10 @@ body {
 .design {
 
 	&__gallery {
+	}
+
+	&__mobile{
+		margin: 0px 0px 50px 0px;
 	}
 }
 //========================================================================================================================================================
@@ -325,8 +348,8 @@ body {
 .about {
 	padding: 110px 0px 80px 0px;
 	@media (max-width:$md3+px){
-		padding: 60px 0px 80px 0px;
-		background-color: rgb(235, 234, 234);
+		padding: 60px 0px 0px 0px;
+		// background-color: rgb(235, 234, 234);
 	}
 
 	&__container{
@@ -344,7 +367,6 @@ body {
 		}
 		@media (max-width:$md3+px){
 			flex: 1 1 100%;
-			text-align: center;
 			padding: 0;
 			margin: 0px 0px 20px 0px;
 		}
@@ -409,8 +431,9 @@ body {
 			height: 350px;
 		}
 		@media (max-width:$md3+px){
-			flex: 0 0 200px;
-			margin: 0px 0px 20px 0px;
+			// flex: 0 0 200px;
+			// margin: 0px 0px 20px 0px;
+			display: none;
 		}
 	}
 
@@ -422,20 +445,16 @@ body {
 		flex-direction: column;
 		justify-content: center;
 		@media (max-width:$md2+px){
-			// padding: 0px 30px 0px 50px;
 		margin: 0px 30px 0px 50px;
 
 		}
 		@media (max-width:$md3+px){
-			padding: 0;
+			margin: 0;
 		}
 	}
 
 	&__title {
 		margin: 0px 0px 20px 0px;
-		@media (max-width:$md3+px){
-			text-align: center;
-		}
 	}
 
 	&__text {
@@ -451,7 +470,12 @@ body {
 		padding: 0px 37px;
 		align-self: flex-start; // ограничить ширину
 		@media (max-width:$md3+px){
-			align-self: center;
+			// align-self: center;
+			align-self: stretch;
+
+			display: flex;
+			justify-content:center;
+			align-items: center;
 		}
 	}
 }

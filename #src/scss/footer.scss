@@ -4,7 +4,17 @@ footer{}
 	background-color: #eee;
 
 	&__content {
-		max-width: 1220px;
+		@media (min-width:$md3+px){
+			max-width: 1220px;
+		}
+		@media (max-width:$md3+px){
+			display: none;
+		}
+	}
+	&__mobile {
+		@media (min-width:$md3+px){
+			display: none;
+		}
 	}
 
 	&__top {
@@ -85,6 +95,8 @@ footer{}
 			margin: 0px 0px 40px 0px;
 		}
 	}
+
+
 }
 
 .footer-list {
@@ -113,6 +125,72 @@ footer{}
 	@media (max-width:$md3+px){
 		text-align: center;
 		margin: 0px 0px 30px 0px;
+	}
+}
+
+//========================================================================================================================================================
+.mobile-footer {
+	&__logo {
+		margin: 55px 0px 45px 0px;
+	}
+
+	&__contacts {
+		margin: 0px 0px 40px 0px;
+	}
+
+	&__contact-info {
+		margin: 0px 0px 30px 0px;
+		li{
+			margin: 0px 0px 20px 0px;
+			&:last-child{
+				margin: 0;
+			}
+			a{
+				color:#000;
+			}
+		}
+	}
+
+	&__location {
+		li{
+			margin: 0px 0px 20px 0px;
+			&:last-child{
+				margin: 0;
+			}
+		}
+	}
+
+	&__social {
+		margin: 0px 0px 100px 0px;
+		display: flex;
+		a{
+			color: #000;
+			font-size: 18px;
+			margin: 0px 18px 0px 0px;
+			&:last-child{
+				margin: 0;
+			}
+		}
+	}
+}
+
+.logo-mobile-footer {
+	display: flex;
+	align-items: center;
+
+	&__img {
+		margin: 0px 48px 0px 0px;
+		flex: 0 0 45px;
+		img{
+			width: 100%;
+		}
+	}
+
+	&__text {
+		font-family:'GothamPro';
+		font-size: 34px;
+		color:#000;
+		text-transform: uppercase;
 	}
 }
 //====================================================================================================
