@@ -39,12 +39,7 @@
 		}
 		@media (max-width:$md3+px){
 			color: #000;
-			font-size: 14px;
-			// position: absolute;
-			// left: 50%;
-			// transform: translate(-50%,0px);
-
-			// margin: 0px 34px;
+			font-size: 16px;
 		}
 	}
 }
@@ -200,20 +195,22 @@
 	display: flex;
 	align-items: center;
 	&__img {
-		flex: 0 0 19px;
+		height: 14px;
+		flex: 0 0 27px;
 		img{
 			max-width: 100%;
+			height: 100%;
 		}
-		margin: 0px 8.5px 0px 0px;
+		margin: 0px 6px 0px 0px;
 	}
 
 	&__text {
+		padding: 3px 0px 0px 0px; // making up for GothamPro singularities
 		font-family: GothamPro;
 		font-weight: 400;
-		font-size: 14px;
+		font-size: 18px;
 		text-transform: uppercase;
 		color: #000;
-
 	}
 }
 
