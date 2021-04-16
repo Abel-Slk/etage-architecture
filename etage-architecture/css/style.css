@@ -2203,7 +2203,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .menu__social a {
   color: #000;
-  margin: 0px 15px 0px 0px;
+  font-size: 23px;
+  margin: 0px 25px 0px 0px;
 }
 
 .menu__social a:last-child {
@@ -2414,8 +2415,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .mobile-footer__social a {
   color: #000;
-  font-size: 18px;
-  margin: 0px 18px 0px 0px;
+  font-size: 23px;
+  margin: 0px 25px 0px 0px;
 }
 
 .mobile-footer__social a:last-child {
