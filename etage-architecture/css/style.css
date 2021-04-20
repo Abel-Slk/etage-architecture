@@ -2253,10 +2253,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .mobile-logo__img {
-  height: 14px;
+  height: 15px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 27px;
-          flex: 0 0 27px;
+      -ms-flex: 0 0 28px;
+          flex: 0 0 28px;
   margin: 0px 6px 0px 0px;
 }
 
@@ -2496,7 +2496,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .main-screen__title {
-  margin: 0px 0px 45px 0px;
+  margin: 0px 0px 37px 0px;
   font-family: GothamPro;
   font-size: 80px;
   line-height: 74px;
@@ -3272,8 +3272,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .icon-menu {
     display: block;
     position: relative;
-    width: 20px;
-    height: 10px;
+    width: 29px;
+    height: 16px;
     cursor: pointer;
     z-index: 5;
   }
@@ -3294,7 +3294,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 
   .icon-menu span:nth-child(2) {
-    width: 15px;
+    width: 23px;
     top: 50%;
     -webkit-transform: translate(0px, -50%);
         -ms-transform: translate(0px, -50%);

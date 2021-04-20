@@ -316,32 +316,6 @@ function _is_hidden(el) {
 	return (el.offsetParent === null)
 }
 
-//=================
-// Adaptive functions
-// function adaptive_header(w, h) {
-// 	var menuListWrapper = $('.menu__list-wrapper');
-// 	var phone = $('.header__phone');
-// 	if(w < 767) {
-// 		if (!phone.hasClass('small-screen')) {
-// 			phone.addClass('small-screen').appendTo(menuListWrapper);
-// 		}
-// 	}
-// 	else {
-// 		if (phone.hasClass('small-screen')) {
-// 			phone.removeClass('small-screen').appendTo($('.header__content'));
-// 		}
-// 	}
-// }
-// function adaptive_function() {
-// 	var w = $(window).outerWidth();
-// 	var h = $(window).outerHeight();
-
-// 	adaptive_header(w, h);
-// }
-// adaptive_function();
-// $(window).resize(function(event) {
-// 	adaptive_function();
-// });
 
 if($('.slider').length>0){
 	$('.slider').slick({
